@@ -1,0 +1,27 @@
+FileHandler
+
+
+	Step 1: Screen shot using selenium can be taken using Takescreenshot Interface.
+	First type cast the driver object to Takesscreenshot interface
+	Ex:
+	((TakesScreenshot)driver)
+	After interface we have to call method getScreeenshot As(), here we neeed to pass argument “OutputType.FILE”.
+This method getScreenshotAs() will object of type FILE.
+((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+When we execute this statement screen will be taken and to store it into variable which is of type FILE as below:
+
+File source = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+Step2:  This screen is available inside system memory.
+
+TO get this screenshot into our local drive create one folder and pass pthat folder variable path to File Class object as below
+
+File  destination = new File(“path of local driver with .jpg/.jpeg extession”)
+
+Step3: To copy screenshot from system memory to local memory use FileHandler class
+FileHandler.copy(source, destination);
+
+In which case we will take screenshot:
+1.	When Test case gets fail
+2.	For login page to verify whether login performing using correct credentials.
+
+
